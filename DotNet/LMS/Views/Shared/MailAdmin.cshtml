@@ -1,0 +1,74 @@
+
+@{
+    ViewData["Title"]="Mail";
+    Layout="_ManLayout";
+}
+<style>
+        body {
+            background-color: #efb3b3;
+        }
+
+        .b1
+        {
+            display: block;
+            margin-left: 9em;
+            background-color: white;
+            height: 2em;
+            width: 6em;
+            border-radius: 1em;
+            margin-left: 20%;
+            margin-top: 10%;
+            background: rgb(179, 163, 163);
+            color: rgb(247, 247, 247);
+            cursor: pointer;
+            margin-left: 0%;
+            margin-top: 1%;
+        }
+        .b1:hover
+        {
+            background: rgb(103, 190, 248);
+            color: rgb(166, 159, 159);
+        } 
+
+
+        .boxfunc{
+            width: 300px;
+            height: 35px;
+            background-color: rgb(152, 146, 146);
+            border-radius: 1em;
+            align-items: left;
+            flex-direction: row;
+            justify-content: left;
+            margin-left: 1%;
+            margin-top: 1.5%;
+            box-shadow: 5px 5px 5px black;  
+        }
+
+            .boxfunc:hover {
+            background-color:rgb(82, 21, 139);
+            cursor: pointer;
+
+        }   
+</style>
+<br>
+<h1>Send Mail to Admin</h1>
+<br>
+<ul class="nav-item" style="margin-left: -4%;font-family: inherit;">
+    <div class= column>
+        <div class="boxfunc">
+        <a class="nav-link text-white" href="mailto:tempmail@company.com" style="font-weight: bolder;"><img src="https://cdn-icons-png.flaticon.com/512/2578/2578982.png"width="17px" height="17px">&nbsp;&nbsp;System Issue</a>
+        </div>
+        <div class="boxfunc">
+         <a class="nav-link text-white" href="mailto:tempmail@company.com" style="font-weight: bolder;"><img src="https://cdn-icons-png.flaticon.com/512/1069/1069189.png"width="17px" height="17px">&nbsp;&nbsp;Update Profile</a>
+        </div>
+        <div class="boxfunc">
+        <a class="nav-link text-white" href="mailto:tempmail@company.com" style="font-weight: bolder;"><img src="https://cdn-icons-png.flaticon.com/512/9840/9840642.png"width="17px" height="17px">&nbsp;&nbsp;Support</a>
+        </div>
+    </div>
+</ul> 
+<br>
+   
+<form method="get" asp-controller="User" asp-action="Index">
+<button class="b1" type="submit">Go Back</button>
+
+</form>

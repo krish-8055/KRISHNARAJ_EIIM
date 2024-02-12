@@ -1,0 +1,110 @@
+@model ComplaintModel
+
+@{
+    ViewBag.Title = "Complaints";
+    Layout = "_EmpLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h2>Submit Your Complaints</h2><img style="margin-top: -7.5%;margin-left: 32%;" src="https://cdn-icons-png.flaticon.com/512/1046/1046057.png"width ="37em" height="37em" >
+<br>
+<style>
+        body {
+            background-image: url("https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63483.jpg?w=900&t=st=1679307462~exp=1679308062~hmac=d439f6280f78604b3834f65357b10c2f7190fc7ded95a62ef720aa7e6f459ac0");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        label
+        {
+            width: 15%;
+        }
+    
+        button
+        {   
+            width: 80px;
+            height: 35px;
+            background-color: rgb(31, 30, 30);
+            border-radius: 1em;
+            align-items: left;
+            flex-direction: row;
+            justify-content: left;
+            margin-left: 35%;
+            margin-top: 1.5%;
+            color: white;          
+        }
+        button:hover 
+        {
+            background-color:rgb(82, 21, 139);
+            cursor: pointer;
+        }
+
+        .content 
+        {
+        max-width: 500px;  
+        background: #75dbb6;
+        padding: 10px;
+        margin-top: 1em;  
+        box-shadow:  0 0 5px 5px #2b2b2b;
+        border-radius: 1em;
+       
+        }
+        .b1
+        {
+            display: block;
+            margin-left: 9em;
+            background-color: white;
+            height: 2em;
+            width: 6em;
+            border-radius: 1em;
+            margin-left: 20%;
+            margin-top: 10%;
+            background: rgb(34, 33, 33);
+            color: rgb(247, 247, 247);
+            cursor: pointer;
+            margin-left: 0%;
+            margin-top: 1%;
+        }
+        .b1:hover
+        {
+            background: rgb(68, 149, 204);
+            color: black;
+        } 
+</style>
+</head>
+
+<body>
+<div class="content" >
+<form  style="margin: auto; width: 150px" method="post">
+    <h6 style="margin-left: -70px;"><strong>Please Enter Your Complaints</h6>
+    <p style="margin-top: 60px;margin-left: -150px;width: 1000px;">
+        <label asp-for="Email">Enter your Email</label>
+        <input  asp-for="Email" />
+    </p>
+    <p style="margin-left: -150px;width: 900px;>
+        <label asp-for="Complaints" >Complaints&emsp;&emsp;&emsp;&emsp;</label>
+        <input asp-for="Complaints" style="height: 80px;width: 190px;" />
+         
+    </p>
+    <div  style="max-height: 40px;width: 300px;height: 40px; border: 0.01px solid transparent;margin-top: -1%;margin-left:-9%;color:red;">
+    <p style="color: red;margin-top: 2%;margin-left:-8%";">@ViewBag.EmptyFeildMessage</p>
+    </div>
+    <div  style="max-height: 40px;width: 300px;height: 40px; border: 0.01px solid transparent;margin-top: -1%;margin-left:-9%;color:red;">
+    <p style="color: red;margin-top: 2%;margin-left:-8%";">@ViewBag.ComplaintMessage</p>
+    </div>
+
+    <p><button style="color: white;" type="submit">Submit</button></p>
+</form>
+<p style="background-color: #ff1e00;">@ViewBag.ErrorMessage</p>
+</div>
+</body>
+<br>
+<form method="get" asp-controller="User" asp-action="Index">
+<button class="b1" type="submit">Go Back</button>
+</form>
+</html>
+<img style="margin-top: -50%;margin-left: 50%;" src="../images/complaint.png" width="698px" height="550px"/> 

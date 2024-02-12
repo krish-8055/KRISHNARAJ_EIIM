@@ -1,0 +1,121 @@
+@{
+    ViewBag.Title = "Leave Details";
+    Layout = "_EmpLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h2>Request Leave</h2>
+<br>
+<style>
+     
+      
+        label
+        {
+            width: 15%;
+        }
+    
+        button
+        {   
+            width: 80px;
+            height: 35px;
+            background-color: rgb(31, 30, 30);
+            border-radius: 1em;
+            align-items: left;
+            flex-direction: row;
+            justify-content: left;
+            margin-left: 35%;
+            margin-top: 1.5%;
+            color: white;          
+        }
+        button:hover 
+        {
+            background-color:rgb(82, 21, 139);
+            cursor: pointer;
+        }
+
+        .content 
+        {
+        max-width: 500px;  
+        background: #cce9f3;
+        padding: 10px;
+        margin-top: 1em;  
+        box-shadow:  0 0 5px 5px #2b2b2b;
+        border-radius: 1em;
+       
+        }
+        .b1
+        {
+            display: block;
+            margin-left: 9em;
+            background-color: white;
+            height: 2em;
+            width: 6em;
+            border-radius: 1em;
+            margin-left: 20%;
+            margin-top: 10%;
+            background: rgb(34, 33, 33);
+            color: rgb(247, 247, 247);
+            cursor: pointer;
+            margin-left: 0%;
+            margin-top: 1%;
+        }
+        .b1:hover
+        {
+            background: rgb(68, 149, 204);
+            color: black;
+        } 
+</style>
+</head>
+
+<body style="background-color: #efb3b3;">
+<div class="content" >
+<form  style="margin: auto; width: 900px" method="post">
+     <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" name="employeeName" required><br>
+
+        <label for="employeeID">Employee ID:</label>
+        <input type="text" id="employeeID" name="employeeID" required><br>
+
+        <label for="emailID">Email ID:</label>
+        <input type="email" id="emailID" name="emailID" required><br>
+
+        <label for="year">Select Year:</label>
+        <input type="number" id="year" name="year" min="1900" max="2099" required><br>
+
+        <input type="submit" value="Submit">
+</form>
+</div>
+<br>
+<div class="Content" style="margin: auto; width: 900px">
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Leave Type</th>
+                <th>Leave Available</th>
+                <th>Leave Taken</th>
+                @* <th>Leave Remaining</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @* @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.EmployeeID</td>
+                    <td>@item.EmailID</td>
+                    <td>@item.Year</td>
+                </tr>
+            } *@
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+<br>
+<form method="get" asp-controller="User" asp-action="Index">
+<button class="b1" type="submit">Go Back</button>
+</form>
+</html>

@@ -1,0 +1,112 @@
+@{
+    ViewData["Title"] = "Signup";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.login-link {
+    margin-top: 15px;
+    color: #555;
+}
+    </style>
+</head>
+<body style="background-color: #666d66;">
+
+    <div class="format-container">
+        <div class="signup-form">
+            <h2>Required pattern</h2>
+            <h3>Username</h3>
+            <p>It can contain uppercase and lowercase letters (a-zA-Z).<br />
+It can contain numbers (0-9).<br />
+It can contain underscores (_) and hyphens (-).<br />
+The length of the username must be between 3 and 16 characters.</p>
+    
+    </div>
+
+    <div class="signup-container">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+
+                <label for="username">Username:</label>
+                 <input type="text" id="username" name="username" pattern="[a-zA-Z0-9_-]{3,16}" title="Valid characters: letters, numbers, underscores, hyphens. Length: 3-16 characters." required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="repassword">Re-Enter the Password</label>
+                <input type="password" id="repassword" name="repassword" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a asp-controller="Home" asp-action="Login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
